@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<helpItems xmlns="http://msh" schema="maml">
+  <command:command xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:maml="http://schemas.microsoft.com/maml/2004/10">
+    <command:details>
+      <command:name>Move-OSCEXOEmailMessage</command:name>
+      <maml:description>
+        <maml:para>Moves email messages to a specific folder.</maml:para>
+      </maml:description>
+      <maml:copyright>
+        <maml:para></maml:para>
+      </maml:copyright>
+      <command:verb>Move</command:verb>
+      <command:noun>OSCEXOEmailMessage</command:noun>
+      <dev:version></dev:version>
+    </command:details>
+    <maml:description>
+      <maml:para>The Move-OSCEXOEmailMessage will attempt to move email messages to a specific folder.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Move-OSCEXOEmailMessage</maml:name>
+        <command:parameter globbing="false" variableLength="false" position="1" required="true" pipelineInput="true">
+          <maml:name>MessageID</maml:name>
+          <maml:description>
+            <maml:para>Specifies the item ID of an email message.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Microsoft.Exchange.WebServices.Data.ItemId </command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="2" required="true" pipelineInput="false">
+          <maml:name>DestinationFolderDisplayName</maml:name>
+          <maml:description>
+            <maml:para>Specifies the display name of a destination folder.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter globbing="false" variableLength="false" position="1" required="true" pipelineInput="true">
+        <maml:name>MessageID</maml:name>
+        <maml:description>
+          <maml:para>Specifies the item ID of an email message.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Microsoft.Exchange.WebServices.Data.ItemId </command:parameterValue>
+        <dev:type>
+          <maml:name>Microsoft.Exchange.WebServices.Data.ItemId </maml:name>
+          <maml:uri></maml:uri>
+          <maml:description>
+            <maml:para></maml:para>
+          </maml:description>
+        </dev:type>
+        <dev:defaultValue></dev:defaultValue>
+      </command:parameter>
+      <command:parameter globbing="false" variableLength="false" position="2" required="true" pipelineInput="false">
+        <maml:name>DestinationFolderDisplayName</maml:name>
+        <maml:description>
+          <maml:para>Specifies the name of a destination folder.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        <dev:type>
+          <maml:name>string</maml:name>
+          <maml:uri></maml:uri>
+          <maml:description>
+            <maml:para></maml:para>
+          </maml:description>
+        </dev:type>
+        <dev:defaultValue></dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>Microsoft.Exchange.WebServices.Data.ItemId</maml:name>
+          <maml:uri></maml:uri>
+          <maml:description></maml:description>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>None</maml:name>
+          <maml:uri></maml:uri>
+          <maml:description></maml:description>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <command:terminatingErrors></command:terminatingErrors>
+    <command:nonTerminatingErrors></command:nonTerminatingErrors>
+    <maml:alertSet>
+      <maml:title>None</maml:title>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <maml:introduction>
+          <maml:para>PS C:\&gt;</maml:para>
+        </maml:introduction>
+        <dev:code>Search-OSCEXOEmailMessage | Move-OSCEXOEmailMessage -DestinationFolderDisplayName "Last 30 days" -Verbose </dev:code>
+        <dev:remarks>
+          <maml:para>Description</maml:para>
+          <maml:para>-----------</maml:para>
+          <maml:para>Moves last 30 days email messages to a specific folder.</maml:para>
+          <maml:para></maml:para>
+          <maml:para></maml:para>
+          <maml:para></maml:para>
+        </dev:remarks>
+        <command:commandLines>
+          <command:commandLine>
+            <command:commandText></command:commandText>
+          </command:commandLine>
+        </command:commandLines>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 2 --------------------------</maml:title>
+        <maml:introduction>
+          <maml:para>PS C:\&gt;</maml:para>
+        </maml:introduction>
+        <dev:code>Search-OSCEXOEmailMessage -StartDate "2012/10/01" -EndDate "2012/10/30" -DisplayTo "Alan Steiner" -Verbose | Move-OSCEXOEmailMessage -DestinationFolderDisplayName "To Me" -Verbose</dev:code>
+        <dev:remarks>
+          <maml:para>Description</maml:para>
+          <maml:para>-----------</maml:para>
+          <maml:para>Moves email messages in a specific time range to a folder.</maml:para>
+          <maml:para></maml:para>
+          <maml:para></maml:para>
+          <maml:para></maml:para>
+        </dev:remarks>
+        <command:commandLines>
+          <command:commandLine>
+            <command:commandText></command:commandText>
+          </command:commandLine>
+        </command:commandLines>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Windows PowerShell Advanced Function</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Working with items by using the EWS Managed API</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </maml:relatedLinks>
+  </command:command>
+</helpItems>

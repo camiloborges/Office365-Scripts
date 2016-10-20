@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<helpItems xmlns="http://msh" schema="maml">
+  <command:command xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:maml="http://schemas.microsoft.com/maml/2004/10">
+    <command:details>
+      <command:name>Search-OSCEXOEmailMessage</command:name>
+      <maml:description>
+        <maml:para>Returns email messages that meet the specified search criteria.</maml:para>
+      </maml:description>
+      <maml:copyright>
+        <maml:para></maml:para>
+      </maml:copyright>
+      <command:verb>Search </command:verb>
+      <command:noun>OSCEXOEmailMessage</command:noun>
+      <dev:version></dev:version>
+    </command:details>
+    <maml:description>
+      <maml:para>The Search-OSCEXOEmailMessage will attempt to return email messages that meet the specified search criteria.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Search-OSCEXOEmailMessage</maml:name>
+        <command:parameter globbing="false" variableLength="false" position="1" required="false" pipelineInput="false">
+          <maml:name>WellKnownFolderName</maml:name>
+          <maml:description>
+            <maml:para>Specifies the name of the folder in which to search for email messages.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="2" required="false" pipelineInput="false">
+          <maml:name>StartDate</maml:name>
+          <maml:description>
+            <maml:para>Specifies the start date of a time range to search.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">datetime</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="3" required="false" pipelineInput="false">
+          <maml:name>EndDate</maml:name>
+          <maml:description>
+            <maml:para>Specifies the end date of a time range to search.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">datetime</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="4" required="false" pipelineInput="false">
+          <maml:name>Subject</maml:name>
+          <maml:description>
+            <maml:para>Specifies the words in the email message Subject property to search.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="5" required="false" pipelineInput="false">
+          <maml:name>From</maml:name>
+          <maml:description>
+            <maml:para>Specifies a user alias or email address in the email message From property to search.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="6" required="false" pipelineInput="false">
+          <maml:name>DisplayTo</maml:name>
+          <maml:description>
+            <maml:para>Specifies a user alias or email address in the email message To property to search.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="7" required="false" pipelineInput="false">
+          <maml:name>DisplayCC</maml:name>
+          <maml:description>
+            <maml:para>Specifies a user alias or email address in the email message CC property to search.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="8" required="false" pipelineInput="false">
+          <maml:name>PageSize</maml:name>
+          <maml:description>
+            <maml:para>Specifies the maximum number of elements the search operation should return.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">int</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter globbing="false" variableLength="false" position="1" required="false" pipelineInput="false">
+        <maml:name>WellKnownFolderName</maml:name>
+        <maml:description>
+          <maml:para>Specifies the name of the folder in which to search for email messages.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        <dev:type>
+          <maml:name>string</maml:name>
+          <maml:uri></maml:uri>
+          <maml:description>
+            <maml:para></maml:para>
+          </maml:description>
+        </dev:type>
+        <dev:defaultValue>Inbox</dev:defaultValue>
+      </command:parameter>
+      <command:parameter globbing="false" variableLength="false" position="2" required="false" pipelineInput="false">
+        <maml:name>StartDate</maml:name>
+        <maml:description>
+          <maml:para>Specifies the start date of a time range to search.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">datetime</command:parameterValue>
+        <dev:type>
+          <maml:name>datetime</maml:name>
+          <maml:uri></maml:uri>
+          <maml:description>
+            <maml:para></maml:para>
+          </maml:description>
+        </dev:type>
+        <dev:defaultValue>Last 30 days from today</dev:defaultValue>
+      </command:parameter>
+      <command:parameter globbing="false" variableLength="false" position="3" required="false" pipelineInput="false">
+        <maml:name>EndDate</maml:name>
+        <maml:description>
+          <maml:para>Specifies the end date of a time range to search.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">datetime</command:parameterValue>
+        <dev:type>
+          <maml:name>datetime</maml:name>
+          <maml:uri></maml:uri>
+          <maml:description>
+            <maml:para></maml:para>
+          </maml:description>
+        </dev:type>
+        <dev:defaultValue>Current date and time</dev:defaultValue>
+      </command:parameter>
+      <command:parameter globbing="false" variableLength="false" position="4" required="false" pipelineInput="false">
+        <maml:name>Subject</maml:name>
+        <maml:description>
+          <maml:para>Specifies the words in the email message Subject property to search.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        <dev:type>
+          <maml:name>string</maml:name>
+          <maml:uri></maml:uri>
+          <maml:description>
+            <maml:para></maml:para>
+          </maml:description>
+        </dev:type>
+        <dev:defaultValue></dev:defaultValue>
+      </command:parameter>
+      <command:parameter globbing="false" variableLength="false" position="5" required="false" pipelineInput="false">
+        <maml:name>From</maml:name>
+        <maml:description>
+          <maml:para>Specifies a user alias or email address in the email message From property to search.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        <dev:type>
+          <maml:name>string</maml:name>
+          <maml:uri></maml:uri>
+          <maml:description>
+            <maml:para></maml:para>
+          </maml:description>
+        </dev:type>
+        <dev:defaultValue></dev:defaultValue>
+      </command:parameter>
+      <command:parameter globbing="false" variableLength="false" position="6" required="false" pipelineInput="false">
+        <maml:name>DisplayTo</maml:name>
+        <maml:description>
+          <maml:para>Specifies a user alias or email address in the email message To property to search.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        <dev:type>
+          <maml:name>string</maml:name>
+          <maml:uri></maml:uri>
+          <maml:description>
+            <maml:para></maml:para>
+          </maml:description>
+        </dev:type>
+        <dev:defaultValue></dev:defaultValue>
+      </command:parameter>
+      <command:parameter globbing="false" variableLength="false" position="7" required="false" pipelineInput="false">
+        <maml:name>DisplayCC</maml:name>
+        <maml:description>
+          <maml:para>Specifies a user alias or email address in the email message CC property to search.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        <dev:type>
+          <maml:name>string</maml:name>
+          <maml:uri></maml:uri>
+          <maml:description>
+            <maml:para></maml:para>
+          </maml:description>
+        </dev:type>
+        <dev:defaultValue></dev:defaultValue>
+      </command:parameter>
+      <command:parameter globbing="false" variableLength="false" position="8" required="false" pipelineInput="false">
+        <maml:name>PageSize</maml:name>
+        <maml:description>
+          <maml:para>Specifies the maximum number of elements the search operation should return.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">int</command:parameterValue>
+        <dev:type>
+          <maml:name>int</maml:name>
+          <maml:uri></maml:uri>
+          <maml:description>
+            <maml:para></maml:para>
+          </maml:description>
+        </dev:type>
+        <dev:defaultValue>100</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None</maml:name>
+          <maml:uri></maml:uri>
+          <maml:description></maml:description>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>Microsoft.Exchange.WebServices.Data.ItemId</maml:name>
+          <maml:uri></maml:uri>
+          <maml:description></maml:description>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <command:terminatingErrors></command:terminatingErrors>
+    <command:nonTerminatingErrors></command:nonTerminatingErrors>
+    <maml:alertSet>
+      <maml:title>None</maml:title>
+      <maml:alert>
+        <maml:para>None</maml:para>
+      </maml:alert>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <maml:introduction>
+          <maml:para>PS C:\&gt;</maml:para>
+        </maml:introduction>
+        <dev:code>Search-OSCEXOEmailMessage</dev:code>
+        <dev:remarks>
+          <maml:para>Description</maml:para>
+          <maml:para>-----------</maml:para>
+          <maml:para>Returns the last 30 days email messages in the Inbox folder.</maml:para>
+          <maml:para></maml:para>
+          <maml:para></maml:para>
+          <maml:para></maml:para>
+        </dev:remarks>
+        <command:commandLines>
+          <command:commandLine>
+            <command:commandText></command:commandText>
+          </command:commandLine>
+        </command:commandLines>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 2 --------------------------</maml:title>
+        <maml:introduction>
+          <maml:para>PS C:\&gt;</maml:para>
+        </maml:introduction>
+        <dev:code>Search-OSCEXOEmailMessage -StartDate "10/1/2012" -EndDate "10/30/2012" -DisplayTo "Alan Steiner"</dev:code>
+        <dev:remarks>
+          <maml:para>Description</maml:para>
+          <maml:para>-----------</maml:para>
+          <maml:para>Returns the email messages that sent to Alan Steiner during a specific time range.</maml:para>
+          <maml:para></maml:para>
+          <maml:para></maml:para>
+          <maml:para></maml:para>
+        </dev:remarks>
+        <command:commandLines>
+          <command:commandLine>
+            <command:commandText></command:commandText>
+          </command:commandLine>
+        </command:commandLines>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Windows PowerShell Advanced Function</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Working with search by using the EWS Managed API</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </maml:relatedLinks>
+  </command:command>
+</helpItems>
