@@ -1,11 +1,36 @@
-﻿Connect-PnPOnline -Url $tenant 
+﻿$tenant = "https://kasa.sharepoint.com"
+Connect-PnPOnline -Url $tenant 
 $web = Get-PnPWeb
 $context = Get-PnPContext
 # $navSettings = [Microsoft.SharePoint.Client.NavigationExtensions]::GetNavigationSettings($web)
 $navigation = $web.Navigation
-$topNav = [ Microsoft.SharePoint.Client.NavigationNodeCollection]$navigation.TopNavigationBar 
-$context.Load($topNav)
+#$topNav = [ Microsoft.SharePoint.Client.NavigationNodeCollection]$navigation.TopNavigationBar 
+#$context.Load($topNav)
+#$context.ExecuteQuery()
+
+
+ $srchNav = $navigation.GetNodeById(1040);
+[Microsoft.SharePoint.Client.NavigationNodeCollection] $sNodes = $srchNav.Children
+$context.Load($srchnav)
+
+$context.Load($sNodes)
 $context.ExecuteQuery()
+
+$sNodes | %{
+
+write-host $($_.Title + " : " + $_.Url);
+}
+
+#}
+ break;
+$navigation | % {
+$_.Context.Load($_.Children)
+$_.Context.ExecuteQuery()
+$_.Children.Count
+
+}
+
+
 
 foreach($node in $topNav) 
  {
@@ -19,16 +44,3 @@ foreach($node in $topNav)
      }
      #//Your logic
  }
-
- $srchNav = $navigation.GetNodeById(2034);
-[Microsoft.SharePoint.Client.NavigationNodeCollection] $sNodes = $srchNav.Children
-$context.Load($srchnav)
-$context.Load($sNodes)
-$context.ExecuteQuery()
- break;
-$navigation | % {
-$_.Context.Load($_.Children)
-$_.Context.ExecuteQuery()
-$_.Children.Count
-
-}
