@@ -1,8 +1,9 @@
 param(
 $url,
-$group
+$group,
+$force
 )
 
 Connect-PnPOnline -Url $url
 $web = get-pnpweb
-Remove-PnPGroup -Identity $group -Web $web
+Remove-PnPGroup -Identity $group -Web $web -Force:$force
