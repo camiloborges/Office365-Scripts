@@ -1,7 +1,7 @@
 param(
 $url,
 $group,
-$force
+$force = false
 )
 
 Connect-PnPOnline -Url $url
